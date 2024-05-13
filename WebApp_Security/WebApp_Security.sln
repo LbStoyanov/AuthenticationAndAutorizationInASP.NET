@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp_Security", "WebApp_Security\WebApp_Security.csproj", "{0818D150-683B-4DF6-B315-90C4E876BFAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0818D150-683B-4DF6-B315-90C4E876BFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0818D150-683B-4DF6-B315-90C4E876BFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0818D150-683B-4DF6-B315-90C4E876BFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0818D150-683B-4DF6-B315-90C4E876BFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CCA93AD-E654-451B-8410-A2FAEA27A354}
+	EndGlobalSection
+EndGlobal
