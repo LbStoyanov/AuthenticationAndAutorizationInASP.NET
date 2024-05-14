@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
+using System.Security.Claims;
 
 namespace WebApp_Security.Pages.Account
 {
@@ -14,19 +16,31 @@ namespace WebApp_Security.Pages.Account
         {
         }
 
-        public void OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return Page();
+
+
+            if (Credential.UserName == "admin" && Credential.Password == "admin")
             {
-                if (Credential.UserName == "admin" && Credential.Password == "admin")
+                var claims = new List<Claim>
                 {
-                    Response.Redirect("/Index");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid Credentials");
-                }
+                      new(ClaimTypes.Role, "Admin"),
+                      new(ClaimTypes.Email, "admin@stoyanov.com")
+                };
+                    
+
+                var claimsIdentity = new ClaimsIdentity(claims, "MyPersonalCookie");
+
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+                await HttpContext.SignInAsync("MyPersonalCookie", claimsPrincipal);
+
+                return RedirectToPage("/Index");
             }
+
+            return Page();
+
         }
     }
     public class Credential
