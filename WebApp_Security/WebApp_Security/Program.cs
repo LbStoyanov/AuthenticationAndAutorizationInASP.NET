@@ -6,8 +6,16 @@ builder.Services.AddRazorPages();
 builder.Services.AddAuthentication("MyPersonalCookie").AddCookie("MyPersonalCookie", options =>
 {
     options.Cookie.Name = "MyPersonalCookie"; //The cookie must be stored in a constant !!!
+    //options.LoginPath = "/AccountTest/Login"; this setup the login page path, if you don't set this, the default path is /Account/Login
 });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("MustBeFromHRDepartment", policy =>
+    {
+        policy.RequireClaim("Department", "HR");
+    });
+});
 
 var app = builder.Build();
 
