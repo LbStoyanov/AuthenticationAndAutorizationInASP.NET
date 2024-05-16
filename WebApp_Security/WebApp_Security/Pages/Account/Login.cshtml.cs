@@ -26,7 +26,8 @@ namespace WebApp_Security.Pages.Account
                 var claims = new List<Claim>
                 {
                       new(ClaimTypes.Name, "admin"),
-                      new(ClaimTypes.Email, "admin@stoyanov.com")
+                      new(ClaimTypes.Email, "admin@stoyanov.com"),
+                      new("Department", "HR"),
                 };
                     
 

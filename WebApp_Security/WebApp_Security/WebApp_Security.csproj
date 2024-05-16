@@ -8,25 +8,18 @@
 
   <ItemGroup>
     <Content Remove="Pages\Account\AccessDenied.cshtml" />
-    <Content Remove="Pages\HumanResource.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\HumanResource.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Account\AccessDenied.cshtml" />
-    <_ContentIncludedByDefault Remove="Pages\HumanResource.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Account\AccessDenied.cshtml" />
-    <None Include="Pages\HumanResource.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Pages\Account\AccessDenied.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Account\AccessDenied.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Account\AccessDenied.cshtml" />
   </ItemGroup>
 
 </Project>
